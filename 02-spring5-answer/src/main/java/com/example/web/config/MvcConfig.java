@@ -17,23 +17,16 @@ import org.thymeleaf.templatemode.TemplateMode;
 
 import java.nio.charset.StandardCharsets;
 
-// TODO 3-19 Java Configであることを示すアノテーションを付加する
 @Configuration
-// TODO 3-20 Spring MVCを有効化するアノテーションを付加する
 @EnableWebMvc
-// TODO 3-21 アノテーションを付加してコントローラークラスをコンポーネントスキャンする
 @ComponentScan(basePackages = {"com.example.web.controller"})
-// TODO 3-22 WebMvcConfigurerインタフェースを実装する
 public class MvcConfig implements WebMvcConfigurer {
 
-    // TODO 3-23 Beanであることを示すアノテーションを付加する
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver =
                 new SpringResourceTemplateResolver();
-        // TODO 3-24 ビューを保存するフォルダ名を「classpath:/templates/」に指定する
         templateResolver.setPrefix("classpath:/templates/");
-        // TODO 3-25 ビューの拡張子を「.html」に指定する
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
@@ -41,7 +34,6 @@ public class MvcConfig implements WebMvcConfigurer {
         return templateResolver;
     }
 
-    // TODO 3-26 Beanであることを示すアノテーションを付加する
     @Bean
     public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver templateResolver) {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -54,7 +46,6 @@ public class MvcConfig implements WebMvcConfigurer {
         return templateEngine;
     }
 
-    // TODO 3-27 Beanであることを示すアノテーションを付加する
     @Bean
     public ThymeleafViewResolver viewResolver(SpringTemplateEngine templateEngine) {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
@@ -63,18 +54,15 @@ public class MvcConfig implements WebMvcConfigurer {
         return viewResolver;
     }
 
-    // TODO 3-28 addResourceHandlers()をオーバーライドして「/css/**」へのリクエストを「classpath:/static/css/」にルーティングする
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/css/**")
                 .addResourceLocations("classpath:/static/css/");
     }
 
-    // TODO 3-29 Beanであることを示すアノテーションを付加する
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        // TODO 3-30 メッセージを記述するプロパティファイル名を「messages」に指定する
         messageSource.setBasename("messages");
         messageSource.setDefaultEncoding(StandardCharsets.UTF_8.name());
         return messageSource;

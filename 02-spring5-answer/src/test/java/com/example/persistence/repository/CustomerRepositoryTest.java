@@ -22,7 +22,6 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 1-14 クラス内のコメントを外してからこのテストを実行し、CustomerRepositoryの実装が正しいかチェックする（テストがグリーンになればOK）
 @SpringJUnitConfig(classes = {DataSourceConfig.class,
         JdbcConfig.class, CustomerRepositoryTest.TestTransactionConfig.class})
 public class CustomerRepositoryTest {

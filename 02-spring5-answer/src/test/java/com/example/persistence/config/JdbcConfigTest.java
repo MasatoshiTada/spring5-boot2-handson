@@ -18,7 +18,6 @@ import java.lang.reflect.Method;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 1-13 このテストを実行して、JdbcSourceConfigの実装が正しいかチェックする（テストがグリーンになればOK）
 public class JdbcConfigTest {
 
     JdbcConfig jdbcConfig = new JdbcConfig();

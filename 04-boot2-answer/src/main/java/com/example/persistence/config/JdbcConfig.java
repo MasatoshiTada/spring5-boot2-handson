@@ -15,11 +15,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import javax.sql.DataSource;
 
 @Configuration
-// TODO 5-04 @ComponentScanアノテーションのみ削除する
 @EnableJdbcRepositories(basePackages = "com.example.persistence.repository")
 public class JdbcConfig {
-
-    // TODO 5-05 NamedParameterJdbcTemplateのBeanのみ削除する
 
     // このBeanは削除しない（Spring Data JDBCはAuto Configuration対象ではないため）
     @Bean

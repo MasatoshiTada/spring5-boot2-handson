@@ -16,7 +16,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 4-21 このテストを実行して、AccountDetailsServiceの実装が正しいかチェックする
 @SpringJUnitConfig(classes = {DataSourceConfig.class, JdbcConfig.class,
         AccountDetailsServiceTest.SecurityConfig.class})
 public class AccountDetailsServiceTest {

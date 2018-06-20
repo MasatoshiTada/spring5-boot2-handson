@@ -25,7 +25,6 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 3-35 このテストを実行して、MvcConfigの実装が正しいかチェックする（addResourceHandlers()のみ、実装の正しさをチェックできません。後ほどブラウザから実行してチェックします）
 public class MvcConfigTest {
 
     MvcConfig mvcConfig = new MvcConfig();

@@ -11,7 +11,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
-// TODO 5-11 @ComponentScanアノテーションのみ削除する
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -24,10 +23,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin()
                 .loginPage("/login")
                 .permitAll();
-        // TODO 5-17 Basic認証を有効化する
         http.httpBasic();
         http.authorizeRequests()
-                // TODO 5-18 ACTUATORロールに、Actuator全エンドポイント（/actuator/**）へのアクセスを許可する
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).hasRole("ACTUATOR")
                 .mvcMatchers("/insert*").hasRole("ADMIN")
                 .anyRequest().authenticated();

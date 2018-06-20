@@ -6,7 +6,6 @@ import java.util.List;
 /**
  * DBのaccountテーブルに対応したエンティティクラス
  */
-// TODO 4-09 ログインユーザーを表すクラスを確認する（変更不要）
 public class Account {
 
     private Integer id;

@@ -26,7 +26,6 @@
     </properties>
 
     <dependencies>
-        <!-- TODO 5-01-2 各Starterが指定されていることを確認する（変更不要） -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -40,7 +39,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- TODO 5-15 ActuatorのStarterを追加する -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

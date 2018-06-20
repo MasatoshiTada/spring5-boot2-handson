@@ -15,10 +15,6 @@ import java.lang.reflect.Method;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/* TODO 4-22 このテストを実行して、SecurityConfigの実装が正しいかチェックする
- * configure(WebSecurity)・configure(HttpSecurity)は、実装の正しさをチェックできません。
- * 後ほどブラウザから実行してチェックします。
- */
 public class SecurityConfigTest {
 
     SecurityConfig securityConfig = new SecurityConfig();

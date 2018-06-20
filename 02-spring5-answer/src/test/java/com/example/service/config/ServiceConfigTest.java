@@ -16,7 +16,6 @@ import java.lang.reflect.Method;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 2-12 このテストを実行して、ServiceConfigの実装が正しいかチェックする（テストがグリーンになればOK）
 public class ServiceConfigTest {
 
     ServiceConfig serviceConfig = new ServiceConfig();

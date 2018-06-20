@@ -11,15 +11,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/* TODO 3-34 このテストを実行して、MvcInitializerの実装が正しいかチェックする（テストがグリーンになればOK）
- *  - テスト実行前に
- *      - getServletConfigClassesTest_withSpringSecurity()メソッドをテスト対象から外すために、@Disabledを付加してください
- */
-/* TODO 4-23 このテストを実行して、MvcInitializerの実装が正しいかチェックする（テストがグリーンになればOK）
- *  - テスト実行前に
- *      - getServletConfigClassesTest_withSpringSecurity()メソッドをテスト対象にするために、@Disabledを削除してください
- *      - getServletConfigClassesTest()メソッドをテスト対象から外すために、@Disabledを付加してください
- */
 public class MvcInitializerTest {
 
     MvcInitializer mvcInitializer = new MvcInitializer();

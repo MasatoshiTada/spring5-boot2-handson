@@ -16,7 +16,6 @@ import java.util.Optional;
  * AccountRepository実装クラス。
  * Spring Data JDBCを使わず、NamedParameterJdbcTemplateを直接利用しています。
  */
-// TODO 4-10 リポジトリクラスであることを示すアノテーションを付加する
 @Repository
 public class AccountRepositoryImpl implements AccountRepository {
 
@@ -27,7 +26,6 @@ public class AccountRepositoryImpl implements AccountRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    // TODO 4-11 メソッドの実装を確認する（変更不要）
     @Override
     public Optional<Account> findByEmail(String email) {
         HashMap<String, Object> params = new HashMap<>();

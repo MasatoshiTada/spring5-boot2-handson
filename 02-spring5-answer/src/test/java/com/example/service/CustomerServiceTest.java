@@ -23,7 +23,6 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO 2-13 このテストを実行して、CustomerServiceの実装が正しいかチェックする（テストがグリーンになればOK）
 @SpringJUnitConfig(classes = {DataSourceConfig.class, JdbcConfig.class, ServiceConfig.class})
 public class CustomerServiceTest {
 

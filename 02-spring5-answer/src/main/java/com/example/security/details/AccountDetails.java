@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * Accountを保持するUserDetails実装クラス
  */
-// TODO 4-12 UserDetailsを実装していることを確認する（変更不要）
 public class AccountDetails implements UserDetails {
 
     private final Account account;
@@ -25,25 +24,21 @@ public class AccountDetails implements UserDetails {
     }
 
     public Account getAccount() {
-        // TODO 4-13 accountフィールドを返していることを確認する（変更不要）
         return account;
     }
 
     @Override
     public String getUsername() {
-        // TODO 4-14 accountのemailを返す
         return account.getEmail();
     }
 
     @Override
     public String getPassword() {
-        // TODO 4-15 accountのpasswordを返す
         return account.getPassword();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO 4-16 authoritiesフィールドを返す
         return authorities;
     }
 

@@ -15,7 +15,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- TODO 3-39 文字コードフィルターの設定を確認する（変更不要） -->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -33,7 +32,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- TODO 4-01 springSecurityFilterChainの定義を確認する（変更不要） -->
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
