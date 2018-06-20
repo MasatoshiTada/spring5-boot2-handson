@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="../static/css/style.css"
+          th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!--/* TODO 4-22 ログイン画面を確認する（変更不要） */-->
+
+<h1>ログイン</h1>
+
+<p class="error" th:if="${session.SPRING_SECURITY_LAST_EXCEPTION}"
+   th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}">Login error</p>
+
+<form method="post" action="index.html" th:action="@{/login}">
+    <table border="1">
+        <tr>
+            <th>メールアドレス</th>
+            <td>
+                <input type="text" name="username">
+            </td>
+        </tr>
+        <tr>
+            <th>パスワード</th>
+            <td>
+                <input type="password" name="password">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="ログイン">
+</form>
+
+</body>
+</html>

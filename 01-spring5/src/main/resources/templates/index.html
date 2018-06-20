@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="../static/css/style.css"
+          th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h1>顧客一覧</h1>
+
+<!--/* TODO 4-23 sec:authentication属性を利用して、ログイン中のユーザー名（principal.account.name）を表示する */-->
+
+
+<!--/* TODO 4-24 sec:authorize属性を利用して、ADMINロールのみ下記のリンクを表示する */-->
+<a href="insertMain.html" th:href="@{insertMain}"     >新規追加へ</a>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>名</th>
+        <th>姓</th>
+        <th>メールアドレス</th>
+        <th>誕生日</th>
+    </tr>
+
+    <!--/* TODO 3-37 顧客一覧画面を確認する（変更不要） */-->
+
+    <tr th:each="customer : ${customers}" th:object="${customer}">
+        <td th:text="*{id}">1</td>
+        <td th:text="*{lastName}">Suzuki</td>
+        <td th:text="*{firstName}">Taro</td>
+        <td th:text="*{email}">tsuzuki@example.com</td>
+        <td th:text="*{#temporals.format(birthday, 'yyyy-MM-dd')}">2000-01-01</td>
+    </tr>
+    <!--/*-->
+    <tr>
+        <td>2</td>
+        <td>Suzuki</td>
+        <td>Jiro</td>
+        <td>jsuzuki@example.com</td>
+        <td>2000-01-02</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Suzuki</td>
+        <td>Saburo</td>
+        <td>ssuzuki@example.com</td>
+        <td>2000-01-03</td>
+    </tr>
+    <!--*/-->
+</table>
+
+<form th:action="@{/logout}" action="index.html" method="post">
+    <input type="submit" value="ログアウト">
+</form>
+</body>
+</html>

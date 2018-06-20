@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="../static/css/style.css"
+          th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h1>新規追加</h1>
+<a href="index.html" th:href="@{/}">顧客一覧へ</a>
+<form method="post" action="index.html" th:action="@{insertComplete}" th:object="${customerForm}">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <td>(自動採番されます)</td>
+        </tr>
+        <tr>
+            <th>姓</th>
+            <td>
+                <input type="text" name="lastName" th:field="*{lastName}" placeholder="32文字以内">
+                <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <th>名</th>
+            <td>
+                <input type="text" name="firstName" th:field="*{firstName}" placeholder="32文字以内">
+                <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th>
+            <td>
+                <input type="text" name="email" th:field="*{email}" placeholder="128文字以内、Eメール形式">
+                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <th>誕生日</th>
+            <td>
+                <input type="date" name="birthday" th:field="*{birthday}" placeholder="yyyy-MM-dd">
+                <div th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}" class="error"></div>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="登録">
+</form>
+
+</body>
+</html>
