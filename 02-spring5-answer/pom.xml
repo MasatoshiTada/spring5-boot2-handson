@@ -10,6 +10,8 @@
     <packaging>war</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.version>5.0.6.RELEASE</spring.version>
@@ -17,7 +19,6 @@
         <junit-jupiter.version>5.2.0</junit-jupiter.version>
     </properties>
 
-    <!-- TODO 0-01 追加されている依存性を確認する（変更不要） -->
     <dependencies>
         <!-- Spring MVC本体 -->
         <dependency>
@@ -166,7 +167,6 @@
     <build>
         <finalName>sample</finalName>
         <plugins>
-            <!-- TODO 0-02 追加されているMaven Pluginを確認する（変更不要） -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
