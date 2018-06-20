@@ -16,7 +16,7 @@ import java.io.File;
  * 通常のTomcatにデプロイする場合は、このクラスは作成しません。
  *
  * 注 : IntelliJ IDEAを使っている場合
- * 実行の[Edit Configurations]で[Working Directory]を02-spring5-answerフォルダに変更してください。
+ * 実行の[Edit Configurations]で[Working Directory]を01-spring5フォルダに変更してください。
  *
  * 参考URL -> https://devcenter.heroku.com/articles/create-a-java-web-application-using-embedded-tomcat
  */
