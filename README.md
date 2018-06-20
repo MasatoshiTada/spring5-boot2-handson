@@ -20,7 +20,7 @@ Spring 5 & Spring Boot 2ハンズオン
 - 02-spring5-answer : 演習1〜4の解答例
 - 03-boot2 : 演習5（穴埋め形式）
 - 04-boot2-answer : 演習5の解答例
-    
+
 # ハンズオンの進め方：テスト駆動形式
 - 番号付きTODOコメントの順に作業を進める
 - いくつかJUnitテスト実行のTODOがあるので、
@@ -35,6 +35,14 @@ Spring 5 & Spring Boot 2ハンズオン
     - 文字コードは全てUTF-8
 - curlコマンド
 - jqコマンド
+
+## [注意] IntelliJ IDEAの実行フォルダ設定
+
+> この手順は、Spring Tool Suiteの場合は必要ありませんので飛ばしてください。
+
+01-spring5プロジェクトは、com.example.Mainクラスから組み込みTomcatを起動します。
+実行の[Edit Configurations]で[Working Directory]を01-spring5フォルダに変更してください。
+02-spring5-answerプロジェクトも同様に設定してください。
 
 ## 完成形（02-spring5-answer）の確認
 1. 02-spring5-answerのcom.example.Mainクラスを実行（組み込みTomcatが起動する）
