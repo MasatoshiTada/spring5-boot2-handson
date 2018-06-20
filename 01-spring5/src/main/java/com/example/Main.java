@@ -32,7 +32,7 @@ public class Main {
      * - 新規追加時に入力検証が実行されること
      */
     /*
-     * TODO 4-25 このmain()メソッドを実行後、ブラウザで http://localhost:8080/sample にアクセスして以下の点を確認する
+     * TODO 4-27 このmain()メソッドを実行後、ブラウザで http://localhost:8080/sample にアクセスして以下の点を確認する
      * - ログイン画面にリダイレクトされる
      *     - 未ログイン時でもCSSが適用されている
      * - user@example.com/userでログインできる

@@ -16,11 +16,11 @@
 
 # TODO 3-02
 `lastName`フィールドは、必須入力かつ32文字以内という制約があります。
-フィールドに`@NotBlank` と `@Length(min = 1, max = 32)`を付加してください。
+`firstName`と同様の制約のため、既に記述済みです。確認のみしてください（変更不要）。
 
 # TODO 3-03
 `email`フィールドは、必須入力・128文字以内・Eメール形式という制約があります。
-フィールドに`@NotBlank` 、 `@Length(min = 1, max = 32)` 、 `@Email` を付加してください。
+フィールドに`@NotBlank` 、 `@Length(min = 1, max = 128)` 、 `@Email` を付加してください。
 
 # TODO 3-04
 `birthday`フィールドは、必須入力という制約があります。
@@ -32,7 +32,7 @@
 
 # TODO 3-06
 今回、このフォームクラスはイミュータブルになっています。この場合、コンストラクタの引数にも日付のフォーマットを指定する必要があります。
-コンストラクタの引数`birthday`に`@DateTimeFormat(pattern = "yyyy-MM-dd")`を付加してください。
+コンストラクタの引数`birthday`にも`@DateTimeFormat(pattern = "yyyy-MM-dd")`を付加しています。確認のみしてください（変更不要）。
 
 > イミュータブルなフォームクラスは、Spring 5からの機能です。ただし現時点ではエラーメッセージが正しく出力されないなどの不具合があります（Spring 5.1で修正予定です）。
 > 参考URL -> https://www.slideshare.net/masatoshitada7/reactivespring-5-spring-boot-2/28
@@ -58,7 +58,7 @@
 メソッドに`@GetMapping("/")`を付加してください。
 
 # TODO 3-10
-顧客を全件検索して、その結果を顧客一覧画面に渡してください。
+顧客を全件検索して、その結果を顧客一覧画面に渡します。下記の記述を追加してください。
 
 ```java
         Iterable<Customer> customers = customerService.findAll();
@@ -72,10 +72,10 @@
 
 # TODO 3-12
 `insertMain()`メソッドは、新規追加画面に対応するコントローラーです。
-メソッドに`@GetMapping("/insertMain")`を付加してください。
+メソッドに`@GetMapping("/insertMain")`を付加していることを確認してください（変更不要）。
 
 # TODO 3-13
-ビューのパスの一部`"insertMain"`をreturnしてください。
+ビューのパスの一部`"insertMain"`をreturnしていることを確認してください（変更不要）。
 これは`src/main/resources/templates/insertMain.html`を表します。
 
 # TODO 3-14
@@ -88,7 +88,7 @@
 
 # TODO 3-16
 入力検証でエラーが見つかった場合、`bindingResult.hasErrors()`が`true`を返します。
-その場合、新規追加画面に戻るように実装してください。
+その場合、新規追加画面に戻るよう、下記のように実装してください。
 
 ```java
         if (bindingResult.hasErrors()) {
@@ -97,11 +97,11 @@
 ```
 
 # TODO 3-17
-`CustomerService`の`save()`メソッドで、顧客データをDBに追加してください。
+`CustomerService`の`save()`メソッドで、顧客データをDBに追加してください。引数に`customer`を渡してください。
 
 # TODO 3-18
-新規追加の完了後は、顧客一覧画面にリダイレクトします。
-`"redirect:/"`をreturnしてください。
+新規追加の完了後は、顧客一覧画面（`"/"`）にリダイレクトします。
+`"redirect:/"`をreturnしていることを確認してください（変更不要）。
 
 # TODO 3-19
 [MvcConfigクラス](src/main/java/com/example/web/config/MvcConfig.java)は、Spring MVCに必要なBeanを定義するJava Configクラスです。
@@ -120,11 +120,12 @@ Spring MVCを有効化します。
 クラスに`WebMvcConfigurer`インタフェースを実装してください。
 
 # TODO 3-23
-Thymeleafでビューの解決を行う`SpringResourceTemplateResolver`のBeanを定義します。
-メソッドに`@Bean`を付加してください。
+Thymeleafでビューの解決を行う`SpringResourceTemplateResolver`のBeanを定義しています。
+メソッドに`@Bean`を付加されていることを確認してください（変更不要）。
 
 # TODO 3-24
 Thymeleafテンプレート（HTMLファイル）が保存されているフォルダ（src/main/resources/templates/）を下記のように指定してください。
+`setPrefix()`メソッドの引数に`null`を指定しているので、それを書き換えてください。
 
 ```java
         templateResolver.setPrefix("classpath:/templates/");
@@ -132,22 +133,23 @@ Thymeleafテンプレート（HTMLファイル）が保存されているフォ�
 
 # TODO 3-25
 Thymeleafテンプレート（HTMLファイル）の拡張子を下記のように指定してください。
+`setSuffix()`メソッドの引数に`null`を指定しているので、それを書き換えてください。
 
 ```java
         templateResolver.setSuffix(".html");
 ```
 
 # TODO 3-26
-ThymeleafでHTMLの出力を行う`SpringTemplateEngine`のBeanを定義します。
-メソッドに`@Bean`を付加してください。
+ThymeleafでHTMLの出力を行う`SpringTemplateEngine`のBeanを定義しています。
+メソッドに`@Bean`を付加されていることを確認してください（変更不要）。
 
 # TODO 3-27
-Thymeleaf用のViewResolver実装である`ThymeleafViewResolver`をBean定義します。
-メソッドに`@Bean`を付加してください。
+Thymeleaf用のViewResolver実装である`ThymeleafViewResolver`のBeanを定義しています。
+メソッドに`@Bean`を付加されていることを確認してください（変更不要）。
 
 # TODO 3-28
 Spring MVCでは、DispatcherServletが全リクエストを受け取るので、CSSなど静的コンテンツへのリクエストが404 Not Foundになってしまいます。
-それを防ぐためには、addResourceHandlers()を下記のようにオーバーライドしてください。
+それを防ぐためには、`addResourceHandlers()`メソッドを下記のようにオーバーライドしてください。
 
 ```java
     @Override
@@ -158,8 +160,8 @@ Spring MVCでは、DispatcherServletが全リクエストを受け取るので�
 ```
 
 # TODO 3-29
-プロパティファイルからメッセージを取得する`MessageSource`をBean定義します。
-メソッドに`@Bean`を付加してください。
+プロパティファイルからメッセージを取得する`MessageSource`をBeanを定義しています。
+メソッドに`@Bean`を付加されていることを確認してください（変更不要）。
 
 # TODO 3-30
 メッセージが記述されたプロパティファイルの名前を下記のように指定してください。
@@ -175,24 +177,15 @@ Spring MVCでは、DispatcherServletが全リクエストを受け取るので�
 これだけでDispatcherServletが登録されます。
 
 # TODO 3-32
-getServletConfigClasses()をオーバーライドして、これまで作成した全Java Configを配列で返してください。
+`getServletConfigClasses()`メソッドをオーバーライドして、これまで作成した全Java Configを配列で返していることを確認してください（変更不要）。
 このJava Configで定義されたBeanが、DispatcherServlet内のDIコンテナで管理されます。
 
-```java
-        return new Class[]{DataSourceConfig.class, JdbcConfig.class, ServiceConfig.class,
-                MvcConfig.class};
-```
-
 # TODO 3-33
-getServletMappings()は、DispatcherServletに対するurl-patternになります。
-`"/"`を返して、全リクエストを捕捉するようにしてください。
-
-```java
-        return new String[]{ "/" };
-```
+`getServletMappings()`メソッドは、DispatcherServletに対するurl-patternになります。
+`"/"`を返していることを確認してください（変更不要）。これによって、DispatcherServletが全リクエストを捕捉するようにしています。
 
 # TODO 3-34
-[MvcInitializerTestクラス](src/test/java/com/example/web/config/MvcInitializerTest.java)を、クラス内のコメントを外してから実行してください。
+[MvcInitializerTestクラス](src/test/java/com/example/web/config/MvcInitializerTest.java)を実行してください。
 テストがグリーンになれば成功です。レッドになった場合、[MvcInitializerクラス](src/main/java/com/example/web/config/MvcInitializer.java)の実装を見直してください。
 
 # TODO 3-35

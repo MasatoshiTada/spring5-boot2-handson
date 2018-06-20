@@ -42,7 +42,7 @@ com.example.serviceパッケージ
 `readOnly = false`とすると、INSERT文などの変更系SQLも実行できるようになります。
 
 # TODO 2-07
-`CustomerRepository`の`save()`を呼び出し、その戻り値をreturnしてください。
+`CustomerRepository`の`save()`を呼び出してください。
 この`save()`は、Spring Dataの`CrudRepository`に定義されたメソッドです。
 
 # TODO 2-08

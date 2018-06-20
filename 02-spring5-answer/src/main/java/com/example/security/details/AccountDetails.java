@@ -25,7 +25,7 @@ public class AccountDetails implements UserDetails {
     }
 
     public Account getAccount() {
-        // TODO 4-13 accountフィールドを返す
+        // TODO 4-13 accountフィールドを返していることを確認する（変更不要）
         return account;
     }
 

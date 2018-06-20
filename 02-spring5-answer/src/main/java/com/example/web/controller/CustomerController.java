@@ -42,12 +42,12 @@ public class CustomerController {
     /**
      * 社員追加画面に遷移するコントローラーメソッド。
      */
-    // TODO 3-12 アノテーションを付加して「GET /insertMain」に対応させる
+    // TODO 3-12 アノテーションを付加して「GET /insertMain」に対応している（変更不要）
     @GetMapping("/insertMain")
     public String insertMain(Model model) {
         // フィールドが全てnullのフォームインスタンスを追加する
         model.addAttribute(CustomerForm.createEmptyForm());
-        // TODO 3-13 src/main/resources/templates/insertMain.htmlに遷移する
+        // TODO 3-13 src/main/resources/templates/insertMain.htmlに遷移している（変更不要）
         return "insertMain";
     }
 
@@ -68,7 +68,7 @@ public class CustomerController {
         Customer customer = customerForm.convertToEntity();
         // TODO 3-17 顧客をDBに追加する
         customerService.save(customer);
-        // TODO 3-18 「/」にリダイレクトする
+        // TODO 3-18 「/」にリダイレクトしている（変更不要）
         return "redirect:/";
     }
 }

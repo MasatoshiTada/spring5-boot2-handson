@@ -26,8 +26,8 @@ import java.nio.charset.StandardCharsets;
 // TODO 3-22 WebMvcConfigurerインタフェースを実装する
 public class MvcConfig   {
 
-    // TODO 3-23 Beanであることを示すアノテーションを付加する
-
+    // TODO 3-23 Beanであることを示すアノテーションが付加されていることを確認する（変更不要）
+    @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver =
                 new SpringResourceTemplateResolver();
@@ -41,8 +41,8 @@ public class MvcConfig   {
         return templateResolver;
     }
 
-    // TODO 3-26 Beanであることを示すアノテーションを付加する
-
+    // TODO 3-26 Beanであることを示すアノテーションが付加されていることを確認する（変更不要）
+    @Bean
     public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver templateResolver) {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
@@ -54,8 +54,8 @@ public class MvcConfig   {
         return templateEngine;
     }
 
-    // TODO 3-27 Beanであることを示すアノテーションを付加する
-
+    // TODO 3-27 Beanであることを示すアノテーションが付加されていることを確認する（変更不要）
+    @Bean
     public ThymeleafViewResolver viewResolver(SpringTemplateEngine templateEngine) {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine);
@@ -70,8 +70,8 @@ public class MvcConfig   {
                 .addResourceLocations(null);
     }
 
-    // TODO 3-29 Beanであることを示すアノテーションを付加する
-
+    // TODO 3-29 Beanであることを示すアノテーションが付加されていることを確認する（変更不要）
+    @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         // TODO 3-30 メッセージを記述するプロパティファイル名を「messages」に指定する

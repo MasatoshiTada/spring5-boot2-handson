@@ -16,7 +16,7 @@ public class CustomerForm {
     @Length(min = 1, max = 32)
     private String firstName;
 
-    // TODO 3-02 検証アノテーションを付加する（空白不可、長さ1から32まで）
+    // TODO 3-02 検証アノテーションを確認する（変更不要）
     @NotBlank
     @Length(min = 1, max = 32)
     private String lastName;
@@ -36,7 +36,7 @@ public class CustomerForm {
     public CustomerForm(String firstName,
                         String lastName,
                         String email,
-                        // TODO 3-06 アノテーションで日付フォーマットを「yyyy-MM-dd」に指定する
+                        // TODO 3-06 コンストラクタの引数にも日付フォーマットが必要（変更不要）
                         @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate birthday) {
         this.firstName = firstName;
         this.lastName = lastName;

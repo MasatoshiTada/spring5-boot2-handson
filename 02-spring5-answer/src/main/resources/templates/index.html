@@ -12,10 +12,10 @@
 
 <h1>顧客一覧</h1>
 
-<!--/* TODO 4-23 sec:authentication属性を利用して、ログイン中のユーザー名（principal.account.name）を表示する */-->
+<!--/* TODO 4-25 sec:authentication属性を利用して、ログイン中のユーザー名（principal.account.name）を表示する */-->
 <p>ようこそ、<span sec:authentication="principal.account.name">John</span>さん！</p>
 
-<!--/* TODO 4-24 sec:authorize属性を利用して、ADMINロールのみ下記のリンクを表示する */-->
+<!--/* TODO 4-26 sec:authorize属性を利用して、ADMINロールのみ下記のリンクを表示する */-->
 <a href="insertMain.html" th:href="@{insertMain}" sec:authorize="hasRole('ADMIN')">新規追加へ</a>
 
 <table border="1">

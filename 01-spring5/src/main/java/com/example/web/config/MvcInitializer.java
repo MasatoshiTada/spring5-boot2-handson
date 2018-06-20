@@ -19,15 +19,17 @@ public class MvcInitializer    {
         return null;
     }
 
-    // TODO 3-32 getServletConfigClasses()をオーバーライドして、これまで作成した全Java Configを配列で返す
+    // TODO 3-32 getServletConfigClasses()をオーバーライドして、これまで作成した全Java Configを配列で返していることを確認する（変更不要）
+    // TODO 4-20 配列にSecurityConfig.classを追加する
 
     protected Class<?>[] getServletConfigClasses() {
-        return null;
+        return new Class[]{DataSourceConfig.class, JdbcConfig.class, ServiceConfig.class,
+                MvcConfig.class};
     }
 
-    // TODO 3-33 getServletMappings()をオーバーライドして「/」を指定する
+    // TODO 3-33 getServletMappings()をオーバーライドして「/」を指定していることを確認する（変更不要）
 
     protected String[] getServletMappings() {
-        return null;
+        return new String[]{ "/" };
     }
 }
