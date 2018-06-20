@@ -46,8 +46,8 @@ Spring 5 & Spring Boot 2ハンズオン
 01-spring5のpom.xmlを開き、内容を確認する（変更不要）
 
 # ハンズオン手順
-演習1 Spring Data JDBCによるデータアクセス（[todo-1.md](01-spring5/todo-1.md)）
-演習2 Springによるビジネスロジック開発（[todo-2.md](01-spring5/todo-2.md)）
-演習3 Spring MVCとThymeleafによるWebアプリ開発（[todo-3.md](01-spring5/todo-3.md)）
-演習4 Spring Securityによる認証・認可（[todo-4.md](01-spring5/todo-4.md)）
-演習5 Spring Bootによる無設定化（[todo-5.md](03-boot2/todo-5.md)）
+- 演習1 Spring Data JDBCによるデータアクセス（[todo-1.md](01-spring5/todo-1.md)）
+- 演習2 Springによるビジネスロジック開発（[todo-2.md](01-spring5/todo-2.md)）
+- 演習3 Spring MVCとThymeleafによるWebアプリ開発（[todo-3.md](01-spring5/todo-3.md)）
+- 演習4 Spring Securityによる認証・認可（[todo-4.md](01-spring5/todo-4.md)）
+- 演習5 Spring Bootによる無設定化（[todo-5.md](03-boot2/todo-5.md)）
