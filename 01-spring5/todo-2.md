@@ -30,7 +30,7 @@ com.example.serviceパッケージ
 # TODO 2-04
 各メソッドをトランザクション管理下にするには、`@Transactional`を付加します。
 こうすると、メソッド開始直前にトランザクション開始処理が割り込まれます（AOP）。
-検索メソッドに`@Transactional(propagation = Propagation.REQUIRED, readOnly = true)`を付加してください。
+`findAll()`メソッドに`@Transactional(propagation = Propagation.REQUIRED, readOnly = true)`を付加してください。
 `readOnly = true`とすると、このメソッド内ではSELECT文しか発行できなくなります。
 
 # TODO 2-05
@@ -38,7 +38,7 @@ com.example.serviceパッケージ
 この`findAll()`は、Spring Dataの`CrudRepository`に定義されたメソッドです。
 
 # TODO 2-06
-追加メソッドに`@Transactional(propagation = Propagation.REQUIRED, readOnly = false)`を付加してください。
+`save()`メソッドに`@Transactional(propagation = Propagation.REQUIRED, readOnly = false)`を付加してください。
 `readOnly = false`とすると、INSERT文などの変更系SQLも実行できるようになります。
 
 # TODO 2-07

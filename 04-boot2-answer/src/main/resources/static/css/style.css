@@ -5,3 +5,7 @@ th {
 .error {
     color: red;
 }
+
+table, th, td {
+    border: solid 1px;
+}

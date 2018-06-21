@@ -149,7 +149,7 @@ Thymeleaf用のViewResolver実装である`ThymeleafViewResolver`のBeanを定�
 
 # TODO 3-28
 Spring MVCでは、DispatcherServletが全リクエストを受け取るので、CSSなど静的コンテンツへのリクエストが404 Not Foundになってしまいます。
-それを防ぐためには、`addResourceHandlers()`メソッドを下記のようにオーバーライドしてください。
+それを防ぐため下記のメソッドを追加してください。
 
 ```java
     @Override
@@ -177,16 +177,23 @@ Spring MVCでは、DispatcherServletが全リクエストを受け取るので�
 これだけでDispatcherServletが登録されます。
 
 # TODO 3-32
-`getServletConfigClasses()`メソッドをオーバーライドして、これまで作成した全Java Configを配列で返していることを確認してください（変更不要）。
+`getServletConfigClasses()`メソッドが、これまで作成した全Java Configを配列で返していることを確認してください（変更不要）。
 このJava Configで定義されたBeanが、DispatcherServlet内のDIコンテナで管理されます。
 
 # TODO 3-33
 `getServletMappings()`メソッドは、DispatcherServletに対するurl-patternになります。
 `"/"`を返していることを確認してください（変更不要）。これによって、DispatcherServletが全リクエストを捕捉するようにしています。
 
+> `getRootConfigClasses()`・`getServletConfigClasses()`・`getServletMappings()`には`@Override`アノテーションが付いていませんが、
+> `AbstractAnnotationConfigDispatcherServletInitializer`クラスで定義されたメソッドをオーバーライドしています。
+
 # TODO 3-34
 [MvcInitializerTestクラス](src/test/java/com/example/web/config/MvcInitializerTest.java)を実行してください。
-テストがグリーンになれば成功です。レッドになった場合、[MvcInitializerクラス](src/main/java/com/example/web/config/MvcInitializer.java)の実装を見直してください。
+後のTODOの関係上、テストメソッドが1つだけ実行されませんが、それ以外のテストメソッドがグリーンになれば成功です。
+レッドになった場合、[MvcInitializerクラス](src/main/java/com/example/web/config/MvcInitializer.java)の実装を見直してください。
+
+> 実行しないテストメソッドには、`@Disabled`が付加されています。
+> これはJUnit 5で定義されたアノテーションで、付加されたテストメソッドは実行されません。
 
 # TODO 3-35
 [MvcConfigTestクラス](src/test/java/com/example/web/config/MvcConfigTest.java)を実行してください。
@@ -205,7 +212,8 @@ Spring MVCでは、DispatcherServletが全リクエストを受け取るので�
 入力欄や、検証エラーメッセージを表示する部分を確認してください（変更不要）。
 
 # TODO 3-39
-[web.xml](src/main/webapp/WEB-INF/web.xml)に設定された文字コードフィルターを確認してください（変更不要）。
+[web.xml](src/main/webapp/WEB-INF/web.xml)に設定された`CharacterEncodingFilter`を確認してください（変更不要）。
+このフィルターはSpringが提供しているもので、リクエストパラメータへの文字コード設定を行います。
 
 # TODO 3-40
 [Mainクラス](src/main/java/com/example/Main.java)のmain()メソッドを実行後、ブラウザで http://localhost:8080/sample/ にアクセスして以下の点を確認してください。

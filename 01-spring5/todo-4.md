@@ -13,7 +13,7 @@
 # TODO 4-01
 Spring Securityはサーブレットフィルターベースで動作します。
 Spring Securityの十数個のフィルターを、すべて管理しているフィルターが *springSecurityFilterChain* です。
-これは既に[web.xml](src/main/webapp/WEB-INF/web.xml)に定義済みなので、確認してください（コメントを外してください）。
+これは既に[web.xml](src/main/webapp/WEB-INF/web.xml)のコメント内に記述済みなので、コメントを外してください。
 
 # TODO 4-02
 [SecurityConfig](src/main/java/com/example/security/config/SecurityConfig.java)は、Spring Securityに関する設定を記述するJava Configクラスです。
@@ -32,31 +32,32 @@ Java Configであることを示し、かつSpring Securityを有効化するた
 `WebSecurityConfigurerAdapter`クラスを継承してください。
 
 # TODO 4-05
-CSSなどの静的コンテンツは、Spring Securityの保護対象から外します。`configure(WebSecurity)`メソッドに、下記の処理を追加してください。
+CSSなどの静的コンテンツは、Spring Securityの保護対象から外します。下記のメソッドを追加してください。
 
 ```java
+    @Override
+    public void configure(WebSecurity web) throws Exception {
         web.ignoring().mvcMatchers("/css/**");
+    }
 ```
 
 # TODO 4-06
-`configure(HttpSecurity)`をオーバーライドして、認証認可設定を記述してください。
-
-## TODO 4-06-1
-ログインページとして`/login`を指定してください。
+`configure(HttpSecurity)`をオーバーライドすると、認証認可設定を記述することができます。
+下記のメソッドを追加してください。
 
 ```java
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
                 .loginPage("/login")
                 .permitAll();
-```
-
-## TODO 4-06-2
-`/insert*`はADMINロールのみアクセス可能に指定してください。
-
-```java
         http.authorizeRequests()
                 .mvcMatchers("/insert*").hasRole("ADMIN")
                 .anyRequest().authenticated();
+        http.logout()
+                .invalidateHttpSession(true)
+                .permitAll();
+    }
 ```
 
 # TODO 4-07
@@ -105,7 +106,7 @@ CSSなどの静的コンテンツは、Spring Securityの保護対象から外�
 `UserDetailsService`インタフェースを実装していることを確認してください（変更不要）。
 
 # TODO 4-19
-`AccountDetails`をnewしてreturnしてください（コンストラクタにAccountを渡してください）。
+`loadUserByUsername()`メソッド内で、`AccountDetails`をnewしてreturnしてください（コンストラクタにAccountを渡してください）。
 
 # TODO 4-20
 [MvcInitializerクラス](src/main/java/com/example/web/config/MvcInitializer.java)の`getServletConfigClasses()`メソッドが返している配列に、`SecurityConfig.class`を追加してください。
@@ -133,10 +134,15 @@ CSSなどの静的コンテンツは、Spring Securityの保護対象から外�
 # TODO 4-23
 [MvcInitializerTestクラス](src/test/java/com/example/web/config/MvcInitializerTest.java)を少し変更します。
 テスト実行前に
-- getServletConfigClassesTest_withSpringSecurity()メソッドをテスト対象にするために、@Disabledを削除してください
-- getServletConfigClassesTest()メソッドをテスト対象から外すために、@Disabledを付加してください
+- `getServletConfigClassesTest_withSpringSecurity()`メソッドをテスト対象にするために、@Disabledを削除してください
+- `getServletConfigClassesTest()`メソッドをテスト対象から外すために、@Disabledを付加してください
 
 上記の変更後、このクラスを実行してください。
+テストメソッドが1つだけ実行されませんが、それ以外のテストメソッドがグリーンになれば成功です。
+レッドになった場合、[MvcInitializerクラス](src/main/java/com/example/web/config/MvcInitializer.java)の実装を見直してください。
+
+> 演習3で実行したのは`getServletConfigClassesTest()`メソッドです。このメソッドは`SecurityConfig.class`が無い状態のテストなので、今回は実行対象から外しています。
+> それに対して、今回実行している`getServletConfigClassesTest_withSpringSecurity()`メソッドは、`SecurityConfig.class`が有る状態でテストしています。
 
 # TODO 4-24
 [login.html](src/main/resources/templates/login.html)はログイン画面です。内容を確認してください（変更不要）。

@@ -65,10 +65,8 @@ public class MvcConfig   {
 
     // TODO 3-28 addResourceHandlers()をオーバーライドして「/css/**」へのリクエストを「classpath:/static/css/」にルーティングする
 
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(null)
-                .addResourceLocations(null);
-    }
+
+
 
     // TODO 3-29 Beanであることを示すアノテーションが付加されていることを確認する（変更不要）
     @Bean

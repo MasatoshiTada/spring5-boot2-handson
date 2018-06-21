@@ -13,7 +13,7 @@
 
 ## TODO A-01
 Spring Bootには、Actuatorという運用・管理に便利な機能があります。
-有効化するために、下記のStarterを追加してください。
+有効化するために、[pom.xml](pom.xml)に下記のStarterを追加してください。
 
 ```xml
         <dependency>
@@ -74,6 +74,9 @@ Actuatorの`/actuator/**`というURLには、`ACTUATOR`ロールのみアクセ
     }
 
 ```
+
+> `EndpointRequest`クラスは2つありますので注意してください。
+> 今回利用するのは`org.springframework.boot.actuate.autoconfigure.security.servlet`のものです。
 
 > `ACTUATOR`ロールのユーザーは、[data.sql](src/main/resources/data.sql)に定義済みです。
 > （ユーザー名 = actuator、パスワード = actuator）
