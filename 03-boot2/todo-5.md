@@ -97,8 +97,11 @@ logging.level.org.springframework.jdbc.core.JdbcTemplate=debug
 
 # TODO 5-14
 [Applicationクラス](src/main/java/com/example/Application.java)のmain()メソッドを実行してください。
-ブラウザから [http://localhost:8080/] を開いて、01-spring5と同様の挙動であることを確認してください。
+ブラウザから http://localhost:8080/ を開いて、01-spring5と同様の挙動であることを確認してください。
 確認後は、アプリケーションを停止してください。
+
+> Spring Bootで作成したWebアプリケーションには、コンテキストルート（01-spring5の`/sample`）は有りません。
+> （application.propertiesで任意のコンテキストルートを付ける設定を記述することもできます）
 
 # TODO 5-15
 Spring Bootには、Actuatorという運用・管理に便利な機能があります。
@@ -288,4 +291,4 @@ $ curl -v -X GET -u actuator:actuator http://localhost:8080/actuator/env | jq
 
 # Well done!
 これですべての演習が完成しました。
-もし時間に余裕がある場合は、引き続き「顧客の姓（または名）でキーワード検索」「顧客の編集」「顧客の削除」を実装してみてください。
+もし時間に余裕がある場合は、[todo-option.md](todo-option.md)に取り組んでください。
