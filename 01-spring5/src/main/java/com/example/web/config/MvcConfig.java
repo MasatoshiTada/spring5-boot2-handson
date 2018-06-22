@@ -17,12 +17,12 @@ import org.thymeleaf.templatemode.TemplateMode;
 
 import java.nio.charset.StandardCharsets;
 
-// TODO 3-19 Java Configであることを示すアノテーションを付加する
-
+// TODO 3-19 Java Configであることを示すアノテーションを付加されていることを確認する（変更不要）
+@Configuration
 // TODO 3-20 Spring MVCを有効化するアノテーションを付加する
 
-// TODO 3-21 アノテーションを付加してコントローラークラスをコンポーネントスキャンする
-
+// TODO 3-21 コントローラークラスをコンポーネントスキャンしていることを確認する（変更不要）
+@ComponentScan(basePackages = {"com.example.web.controller"})
 // TODO 3-22 WebMvcConfigurerインタフェースを実装する
 public class MvcConfig   {
 
@@ -32,9 +32,9 @@ public class MvcConfig   {
         SpringResourceTemplateResolver templateResolver =
                 new SpringResourceTemplateResolver();
         // TODO 3-24 ビューを保存するフォルダ名を「classpath:/templates/」に指定する
-        templateResolver.setPrefix(null);
+
         // TODO 3-25 ビューの拡張子を「.html」に指定する
-        templateResolver.setSuffix(null);
+
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
         templateResolver.setCacheable(false);
@@ -73,7 +73,7 @@ public class MvcConfig   {
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         // TODO 3-30 メッセージを記述するプロパティファイル名を「messages」に指定する
-        messageSource.setBasename(null);
+
         messageSource.setDefaultEncoding(StandardCharsets.UTF_8.name());
         return messageSource;
     }

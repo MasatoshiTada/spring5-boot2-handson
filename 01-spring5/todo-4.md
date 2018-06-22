@@ -99,7 +99,7 @@ CSSなどの静的コンテンツは、Spring Securityの保護対象から外�
 `getAuthorities()`メソッドが、`authorities`フィールドを返すようにしてください。これが、ユーザーが持つロールを表します。
 
 # TODO 4-17
-[AccountDetailsServiceクラス](src/main/java/com/example/security/details/AccountDetailsService.java)は、`AccountDetails`を返すメソッドを持っています。
+[AccountDetailsServiceクラス](src/main/java/com/example/security/details/AccountDetailsService.java)は、`AccountDetails`を返す`loadUserByUsername()`メソッドを持っています。
 このクラスに`@Service`を付加して、ビジネスロジックのBeanであることを示してください。
 
 # TODO 4-18
@@ -118,7 +118,6 @@ CSSなどの静的コンテンツは、Spring Securityの保護対象から外�
         return new Class[]{DataSourceConfig.class, JdbcConfig.class, ServiceConfig.class,
                 MvcConfig.class, SecurityConfig.class};
     }
-
 ```
 
 # TODO 4-21

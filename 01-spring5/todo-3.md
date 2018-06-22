@@ -1,6 +1,10 @@
 演習3 Spring MVCとThymeleafによるWebアプリ開発
 ==========================================
 
+この演習ではSpring MVCとThymeleafでプレゼンテーション層を作成します。
+コントローラーから演習2で作成したビジネスロジック層の呼び出し、その結果をThymeleafで作成したビューに渡します。
+（今回の演習では、ビューは作成済みになっています）
+
 # 使うプロジェクト
 01-spring5
 
@@ -20,11 +24,14 @@
 
 # TODO 3-03
 `email`フィールドは、必須入力・128文字以内・Eメール形式という制約があります。
-フィールドに`@NotBlank` 、 `@Length(min = 1, max = 128)` 、 `@Email` を付加してください。
+フィールドに`@NotBlank` 、 `@Length(min = 1, max = 128)` 、 `@Email` が付加されていることを確認してください（変更不要）。
 
 # TODO 3-04
 `birthday`フィールドは、必須入力という制約があります。
-フィールドに`@NotNull`を付加してください。
+フィールドに`@NotNull`が付加されていることを確認してください（変更不要）。
+
+> `@NotBlank`は文字列にのみ付加できます。`null`・空文字・半角スペースを検証エラーにできます。
+> `@NotNull`は全てのデータ型に付加でき、`null`のみを検証エラーにできます。
 
 # TODO 3-05
 `birthday`フィールドは`java.time.LocalDate`型のため、日付のフォーマットを指定する必要があります。
@@ -97,7 +104,12 @@
 ```
 
 # TODO 3-17
-`CustomerService`の`save()`メソッドで、顧客データをDBに追加してください。引数に`customer`を渡してください。
+`CustomerService`の`save()`メソッドで、顧客データをDBに登録します。
+下記の処理を追加してください。
+
+```java
+        customerService.save(customer);
+```
 
 # TODO 3-18
 新規追加の完了後は、顧客一覧画面（`"/"`）にリダイレクトします。
@@ -105,7 +117,7 @@
 
 # TODO 3-19
 [MvcConfigクラス](src/main/java/com/example/web/config/MvcConfig.java)は、Spring MVCに必要なBeanを定義するJava Configクラスです。
-クラスに`@Configuration` を付加してJava Configであることを示してください。
+クラスに`@Configuration` を付加されていることを確認してください（変更不要）。
 
 # TODO 3-20
 Spring MVCを有効化します。
@@ -119,21 +131,22 @@ Spring MVCを有効化します。
 このJava Configで、より多くのSpring MVCに関する設定を行えるようにします。
 クラスに`WebMvcConfigurer`インタフェースを実装してください。
 
+> Spring 4までは、`WebMvcConfigurerAdapter`クラスを継承してJava Configクラスを作成していました。
+> Spring 5ではこのクラスが非推奨になったため、`WebMvcConfigurer`インタフェースを実装します。
+
 # TODO 3-23
 Thymeleafでビューの解決を行う`SpringResourceTemplateResolver`のBeanを定義しています。
 メソッドに`@Bean`を付加されていることを確認してください（変更不要）。
 
 # TODO 3-24
-Thymeleafテンプレート（HTMLファイル）が保存されているフォルダ（src/main/resources/templates/）を下記のように指定してください。
-`setPrefix()`メソッドの引数に`null`を指定しているので、それを書き換えてください。
+下記の記述を追加して、Thymeleafテンプレート（HTMLファイル）が保存されているフォルダ（src/main/resources/templates/）を指定してください。
 
 ```java
         templateResolver.setPrefix("classpath:/templates/");
 ```
 
 # TODO 3-25
-Thymeleafテンプレート（HTMLファイル）の拡張子を下記のように指定してください。
-`setSuffix()`メソッドの引数に`null`を指定しているので、それを書き換えてください。
+下記の記述を追加して、Thymeleafテンプレート（HTMLファイル）の拡張子を指定してください。
 
 ```java
         templateResolver.setSuffix(".html");
@@ -164,7 +177,7 @@ Spring MVCでは、DispatcherServletが全リクエストを受け取るので�
 メソッドに`@Bean`を付加されていることを確認してください（変更不要）。
 
 # TODO 3-30
-メッセージが記述されたプロパティファイルの名前を下記のように指定してください。
+下記の記述を追加して、メッセージが記述されたプロパティファイルの名前を指定してください。
 このプロパティファイルは[src/main/resources直下](src/main/resources/messages.properties)にあります（記述済み）。
 
 ```java

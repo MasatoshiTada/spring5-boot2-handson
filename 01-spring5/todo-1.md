@@ -1,6 +1,8 @@
 演習1 Spring Data JDBCによるデータアクセス
 ======================================
 
+この演習では、Spring Data JDBCを利用して永続化層を作成します。
+
 # 使うプロジェクト
 01-spring5
 
@@ -30,7 +32,7 @@ dataSource()メソッドは、DataSourceのBeanを定義しています。
 
 # TODO 1-07
 [CustomerRepositoryインタフェース](src/main/java/com/example/persistence/repository/CustomerRepository.java)は、customerテーブルへのCRUD操作を行います。
-`CrudRepository`インタフェースを継承してください。
+`CrudRepository<Customer, Integer>`インタフェースを継承してください。
 
 # TODO 1-08
 [JdbcConfigクラス](src/main/java/com/example/persistence/config/JdbcConfig.java)は、Spring Data JDBCに関するBean定義を行うJava Configです。

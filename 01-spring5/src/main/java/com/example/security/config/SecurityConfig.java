@@ -23,20 +23,11 @@ public class SecurityConfig    {
 
     // TODO 4-06 configure(HttpSecurity)をオーバーライドして、認証認可設定を記述する
 
-    protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
-                // TODO 4-06-1 ログインページとして「/login」を指定
-                .loginPage(null)
-                .permitAll();
-        http.authorizeRequests()
-                // TODO 4-06-2 「/insert*」はADMINロールのみアクセス可能に指定
-                .mvcMatchers(null).hasRole(null)
-                // その他のURLは認証済みであればアクセス可能
-                .anyRequest().authenticated();
-        http.logout()
-                .invalidateHttpSession(true)
-                .permitAll();
-    }
+
+
+
+
+
 
     // TODO 4-07 Beanであることを示すアノテーションを付加する
 

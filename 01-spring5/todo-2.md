@@ -1,6 +1,9 @@
 演習2 Springによるビジネスロジック開発
 ======================================
 
+この演習では、ビジネスロジック層を作成します。
+演習1で作成した永続化層の呼び出しや、トランザクション管理を行います。
+
 # 使うプロジェクト
 01-spring5
 
@@ -42,8 +45,9 @@ com.example.serviceパッケージ
 `readOnly = false`とすると、INSERT文などの変更系SQLも実行できるようになります。
 
 # TODO 2-07
-`CustomerRepository`の`save()`を呼び出してください。
-この`save()`は、Spring Dataの`CrudRepository`に定義されたメソッドです。
+`CustomerRepository`の`save()`メソッドを呼び出してください。
+この`save()`メソッドは、Spring Dataの`CrudRepository`に定義されたメソッドです。
+`save()`メソッドの引数には、DBに追加する`Customer`インスタンスを指定してください。
 
 # TODO 2-08
 [ServiceConfigクラス](src/main/java/com/example/service/config/ServiceConfig.java)は、ビジネスロジックやトランザクションに関するJava Configクラスです。
