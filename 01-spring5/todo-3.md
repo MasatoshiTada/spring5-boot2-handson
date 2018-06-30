@@ -125,7 +125,7 @@ Spring MVCを有効化します。
 
 # TODO 3-21
 コントローラークラスをコンポーネントスキャンします。
-クラスに`@ComponentScan(basePackages = {"com.example.web.controller"})`を付加してください。
+クラスに`@ComponentScan(basePackages = {"com.example.web.controller"})`を付加されていることを確認してください（変更不要）。
 
 # TODO 3-22
 このJava Configで、より多くのSpring MVCに関する設定を行えるようにします。
