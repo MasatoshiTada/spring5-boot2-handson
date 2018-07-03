@@ -23,6 +23,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <junit-jupiter.version>5.2.0</junit-jupiter.version>
+        <spring-data-releasetrain.version>Lovelace-M3</spring-data-releasetrain.version>
     </properties>
 
     <dependencies>
@@ -43,7 +44,6 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jdbc</artifactId>
-            <version>1.0.0.M3</version>
         </dependency>
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
