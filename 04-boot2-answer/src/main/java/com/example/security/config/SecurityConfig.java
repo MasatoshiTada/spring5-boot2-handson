@@ -1,5 +1,6 @@
 package com.example.security.config;
 
+import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -24,6 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic();
         http.authorizeRequests()
                 .mvcMatchers("/insert*").hasRole("ADMIN")
+                .requestMatchers(EndpointRequest.toAnyEndpoint()).hasRole("ACTUATOR")
                 .anyRequest().authenticated();
         http.logout()
                 .invalidateHttpSession(true)
