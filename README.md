@@ -29,20 +29,15 @@ Spring 5 & Spring Boot 2ハンズオン
 
 # 開始前に
 
+## 準備手順
+別途[ブログ](https://qiita.com/suke_masa/items/44463518fdbbc13e0087)にまとめています。
+
 ## 開発環境
 - JDK 8
 - IntelliJ IDEA または Spring Tool Suite （なるべく最新版）
     - 文字コードは全てUTF-8
 - curlコマンド
 - jqコマンド
-
-## [注意] IntelliJ IDEAの実行フォルダ設定
-
-> この手順は、Spring Tool Suiteの場合は必要ありませんので飛ばしてください。
-
-01-spring5プロジェクトは、com.example.Mainクラスから組み込みTomcatを起動します。
-実行の[Edit Configurations]で[Working Directory]を01-spring5フォルダに変更してください。
-02-spring5-answerプロジェクトも同様に設定してください。
 
 ## 完成形（02-spring5-answer）の確認
 1. 02-spring5-answerのcom.example.Mainクラスを実行（組み込みTomcatが起動する）
