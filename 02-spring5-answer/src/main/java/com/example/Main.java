@@ -27,13 +27,15 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Tomcat tomcat = new Tomcat();
 
+        String prefix = new File(".").getAbsolutePath().contains("02-spring5-answer") ? "" : "02-spring5-answer/";
+
         // ポート番号 = 8080
         tomcat.setPort(8080);
         // コンテキストルート = /sample
         StandardContext ctx = (StandardContext) tomcat.addWebapp("/sample",
-                new File("src/main/webapp/").getAbsolutePath());
+                new File(prefix + "src/main/webapp/").getAbsolutePath());
 
-        File additionWebInfClasses = new File("target/classes");
+        File additionWebInfClasses = new File(prefix + "target/classes");
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
                 additionWebInfClasses.getAbsolutePath(), "/"));
