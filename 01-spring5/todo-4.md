@@ -128,8 +128,6 @@ CSSなどの静的コンテンツは、Spring Securityの保護対象から外�
 [SecurityConfigTestクラス](src/test/java/com/example/security/config/SecurityConfigTest.java)を実行してください。
 テストがグリーンになれば成功です。レッドになった場合、[SecurityConfigクラス](src/main/java/com/example/security/config/SecurityConfig.java)の実装を見直してください。
 
-> 各configure()メソッドについては存在のみを確認しています。実装の正しさについては、後のTODOでブラウザから実行して確認します。
-
 # TODO 4-23
 [MvcInitializerTestクラス](src/test/java/com/example/web/config/MvcInitializerTest.java)を少し変更します。
 テスト実行前に
