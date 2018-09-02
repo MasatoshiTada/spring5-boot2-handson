@@ -24,6 +24,6 @@ CREATE TABLE account (
 
 CREATE TABLE account_authority (
   account_id INTEGER REFERENCES account(id),
-  authority_name varchar(32),
+  authority_name VARCHAR(32),
   PRIMARY KEY (account_id, authority_name)
 );
