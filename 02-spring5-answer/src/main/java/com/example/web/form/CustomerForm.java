@@ -31,7 +31,7 @@ public class CustomerForm {
     public CustomerForm(String firstName,
                         String lastName,
                         String email,
-                        @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate birthday) {
+                        LocalDate birthday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

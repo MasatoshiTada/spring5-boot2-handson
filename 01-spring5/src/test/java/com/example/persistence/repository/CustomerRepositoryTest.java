@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// TODO 1-14 クラス内のコメントを外してからこのテストを実行し、CustomerRepositoryの実装が正しいかチェックする（テストがグリーンになればOK）
+// TODO 1-13 クラス内のコメントを外してからこのテストを実行し、CustomerRepositoryの実装が正しいかチェックする（テストがグリーンになればOK）
 @SpringJUnitConfig(classes = {DataSourceConfig.class,
         JdbcConfig.class, CustomerRepositoryTest.TestTransactionConfig.class})
 public class CustomerRepositoryTest {
@@ -66,7 +66,7 @@ public class CustomerRepositoryTest {
 //                "yimaizumi@keyaki.com", LocalDate.of(1998, 9, 30));
 //        customerRepository.save(newCustomer);
 //        int newCustomerId = 6;
-//        assertEquals(new Integer(newCustomerId), newCustomer.getId());
+//        assertEquals(Integer.valueOf(newCustomerId), newCustomer.getId());
 //        assertEquals(6, JdbcTestUtils.countRowsInTable(jdbcTemplate, "customer"));
 //
 //        Optional<Customer> customerOptional = customerRepository.findById(newCustomerId);

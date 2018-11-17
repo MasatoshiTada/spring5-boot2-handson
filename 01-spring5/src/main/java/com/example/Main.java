@@ -23,7 +23,7 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     /*
-     * TODO 3-40 このmain()メソッドを実行後、ブラウザで http://localhost:8080/sample にアクセスして以下の点を確認する
+     * TODO 3-27 このmain()メソッドを実行後、ブラウザで http://localhost:8080/sample にアクセスして以下の点を確認する
      * - 顧客が全件一覧表示されている
      * - CSSが適用されていること（表の一部がオレンジになっている）
      * - [新規追加へ]をクリックし、新規追加ができること
@@ -61,6 +61,7 @@ public class Main {
                 additionWebInfClasses.getAbsolutePath(), "/"));
         ctx.setResources(resources);
 
+        tomcat.getConnector();
         tomcat.start();
         tomcat.getServer().await();
     }

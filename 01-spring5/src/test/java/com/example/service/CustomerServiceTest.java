@@ -84,7 +84,7 @@ public class CustomerServiceTest {
         Customer newCustomer = new Customer("佑唯", "今泉",
                 "yimaizumi@keyaki.com", LocalDate.of(1998, 9, 30));
         customerService.save(newCustomer);
-        assertEquals(new Integer(6), newCustomer.getId());
+        assertEquals(Integer.valueOf(6), newCustomer.getId());
         assertEquals(6, JdbcTestUtils.countRowsInTable(jdbcTemplate, "customer"));
 
         Map<String, Object> map = jdbcTemplate.queryForMap(

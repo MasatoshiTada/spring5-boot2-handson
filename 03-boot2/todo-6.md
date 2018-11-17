@@ -1,17 +1,9 @@
-演習(オプション) 更なる実装
+演習6 Spring Boot Actuatorによる運用監視
 ======================================
 
-# 追加課題
-時間に余裕がある場合は、下記のオプションに取り組んでください。
+この演習では、Spring BootのActuator機能を実装します。
 
-- [オプションA](#オプションA_Actuatorの追加)
-    - Spring BootのActuator機能を実装します。
-- [オプションB](#オプションB_機能の追加)
-    - 顧客管理システムに「検索」「更新」「削除」機能を追加します。
-
-# オプションA_Actuatorの追加
-
-## TODO A-01
+## TODO 6-01
 Spring Bootには、Actuatorという運用・管理に便利な機能があります。
 有効化するために、[pom.xml](pom.xml)に下記のStarterを追加してください。
 
@@ -22,7 +14,7 @@ Spring Bootには、Actuatorという運用・管理に便利な機能があり�
         </dependency>
 ```
 
-## TODO A-02
+## TODO 6-02
 Spring Boot 2からは、デフォルトでは一部のエンドポイント（`/info`と`/health`のみ）しか公開されなくなりました。
 全てのエンドポイントを公開するために、下記のプロパティを[application.properties](src/main/resources/application.properties)に追記してください。
 
@@ -30,7 +22,7 @@ Spring Boot 2からは、デフォルトでは一部のエンドポイント（`
 management.endpoints.web.exposure.include=*
 ```
 
-## TODO A-03
+## TODO 6-03
 [SecurityConfigクラス](src/main/java/com/example/security/config/SecurityConfig.java)で、Actuatorエンドポイントのセキュリティ設定を行います。
 Actuatorエンドポイントには、今回はcurlコマンドなどでアクセスするので、Basic認証を有効化します。
 下記の処理を追記してください。
@@ -52,7 +44,7 @@ Actuatorエンドポイントには、今回はcurlコマンドなどでアク�
     }
 ```
 
-## TODO A-04
+## TODO 6-04
 Actuatorの`/actuator/**`というURLには、`ACTUATOR`ロールのみアクセスできるようにします。
 下記の処理を追記してください。
 
@@ -81,7 +73,7 @@ Actuatorの`/actuator/**`というURLには、`ACTUATOR`ロールのみアクセ
 > `ACTUATOR`ロールのユーザーは、[data.sql](src/main/resources/data.sql)に定義済みです。
 > （ユーザー名 = actuator、パスワード = actuator）
 
-## TODO A-05
+## TODO 6-05
 [Applicationクラス](src/main/java/com/example/Application.java)のmain()メソッドを実行してください。
 下記のcurlコマンドで、Actuatorの各エンドポイントにアクセスしてください。
 
@@ -200,9 +192,6 @@ $ curl -v -X GET -u actuator:actuator http://localhost:8080/actuator/env | jq
 }
 ```
 
-# オプションB_機能の追加
-下記の機能を追加してください。
-
-- 顧客の姓（または名）でキーワード検索
-- 顧客の編集
-- 顧客の削除
+# Well done!
+これで演習6は完成です。
+すべての演習が終了しました。お疲れ様でした！

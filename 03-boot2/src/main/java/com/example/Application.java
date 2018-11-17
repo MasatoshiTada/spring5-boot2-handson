@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
-// TODO 5-01-1 @SpringBootApplicationを付加する
+// TODO 6-05 起動し、curlコマンドでActuatorエンドポイントにアクセスする
+// TODO 5-01 @SpringBootApplicationを付加する
 
 public class Application {
 

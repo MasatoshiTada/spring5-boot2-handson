@@ -5,6 +5,7 @@ Spring 5 & Spring Boot 2ハンズオン
 - 顧客の全件一覧表示・新規追加を行えるWebアプリ
     - 演習1〜4：Spring Bootを使わない構成
     - 演習5：Spring Bootにアプリを移植
+    - 演習6：Actuatorの追加
 
 # 技術構成
 - Webフレームワーク : Spring MVC
@@ -18,8 +19,8 @@ Spring 5 & Spring Boot 2ハンズオン
 # プロジェクト構成
 - 01-spring5 : 演習1〜4（穴埋め形式）
 - 02-spring5-answer : 演習1〜4の解答例
-- 03-boot2 : 演習5（穴埋め形式）
-- 04-boot2-answer : 演習5の解答例
+- 03-boot2 : 演習5〜6（穴埋め形式）
+- 04-boot2-answer : 演習5〜6の解答例
 
 # ハンズオンの進め方：テスト駆動形式
 - 番号付きTODOコメントの順に作業を進める
@@ -33,7 +34,7 @@ Spring 5 & Spring Boot 2ハンズオン
 別途[ブログ](https://qiita.com/suke_masa/items/44463518fdbbc13e0087)にまとめています。
 
 ## 開発環境
-- JDK 8
+- JDK 11
 - IntelliJ IDEA または Spring Tool Suite （なるべく最新版）
     - 文字コードは全てUTF-8
 - curlコマンド
@@ -54,3 +55,4 @@ Spring 5 & Spring Boot 2ハンズオン
 - 演習3 Spring MVCとThymeleafによるWebアプリ開発（[todo-3.md](01-spring5/todo-3.md)）
 - 演習4 Spring Securityによる認証・認可（[todo-4.md](01-spring5/todo-4.md)）
 - 演習5 Spring Bootによる無設定化（[todo-5.md](03-boot2/todo-5.md)）
+- 演習6 Spring Boot Actuatorによる運用監視（[todo-6.md](03-boot2/todo-6.md)）

@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// TODO 3-36 このテストを実行して、CustomerControllerの実装が正しいかチェックする（グリーンになればOK）
+// TODO 3-23 このテストを実行して、CustomerControllerの実装が正しいかチェックする（グリーンになればOK）
 @SpringJUnitWebConfig(classes = {DataSourceConfig.class, JdbcConfig.class,
         ServiceConfig.class, MvcConfig.class})
 public class CustomerControllerTest {

@@ -42,14 +42,17 @@ dataSource()メソッドは、DataSourceのBeanを定義しています。
 Spring Data JDBCを有効化するとともに、作成したCrudRepository継承インタフェースのパッケージを指定する必要があります。
 クラスに`@EnableJdbcRepositories(basePackages = "com.example.persistence.repository")`を付加してください。
 
-# TODO 1-10〜12
-全メソッドに`@Bean`を付加してください。
+# TODO 1-10
+Spring Data JDBCに関するBean定義のほとんどは`JdbcConfiguration`クラスに定義されています。このクラスを継承してください。
 
-# TODO 1-13
+# TODO 1-11
+Spring Data JDBCが内部で利用する`NamedParameterJdbcTemplate`をBean定義しています。このメソッドに`@Bean`を付加してください。
+
+# TODO 1-12
 [JdbcConfigTestクラス](src/test/java/com/example/persistence/config/JdbcConfigTest.java)を実行してください。
 テストがグリーンになれば成功です。レッドになった場合、[JdbcConfigクラス](src/main/java/com/example/persistence/config/JdbcConfig.java)の実装を見直してください。
 
-# TODO 1-14
+# TODO 1-13
 [CustomerRepositoryTestクラス](src/test/java/com/example/persistence/repository/CustomerRepositoryTest.java)のクラス内コメントをすべて外してから、実行してください。
 テストがグリーンになれば成功です。レッドになった場合、[CustomerRepositoryインタフェース](src/main/java/com/example/persistence/repository/CustomerRepository.java)の実装を見直してください。
 

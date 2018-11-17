@@ -31,7 +31,7 @@ public class AccountRepositoryTest {
         assertTrue(accountOptional.isPresent());
         Account account = accountOptional.get();
         assertAll(
-                () -> assertEquals(new Integer(1), account.getId()),
+                () -> assertEquals(Integer.valueOf(1), account.getId()),
                 () -> assertEquals("user", account.getName()),
                 () -> assertEquals("user@example.com", account.getEmail()),
                 () -> assertTrue(passwordEncoder.matches("user", account.getPassword())),

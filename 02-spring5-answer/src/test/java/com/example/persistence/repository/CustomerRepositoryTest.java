@@ -62,7 +62,7 @@ public class CustomerRepositoryTest {
                 "yimaizumi@keyaki.com", LocalDate.of(1998, 9, 30));
         customerRepository.save(newCustomer);
         int newCustomerId = 6;
-        assertEquals(new Integer(newCustomerId), newCustomer.getId());
+        assertEquals(Integer.valueOf(newCustomerId), newCustomer.getId());
         assertEquals(6, JdbcTestUtils.countRowsInTable(jdbcTemplate, "customer"));
 
         Optional<Customer> customerOptional = customerRepository.findById(newCustomerId);

@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// TODO 3-35 このテストを実行して、MvcConfigの実装が正しいかチェックする（addResourceHandlers()のみ、実装の正しさをチェックできません。後ほどブラウザから実行してチェックします）
+// TODO 3-22 このテストを実行して、MvcConfigの実装が正しいかチェックする（addResourceHandlers()のみ、実装の正しさをチェックできません。後ほどブラウザから実行してチェックします）
 public class MvcConfigTest {
 
     MvcConfig mvcConfig = new MvcConfig();

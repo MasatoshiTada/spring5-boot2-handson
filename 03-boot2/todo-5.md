@@ -10,19 +10,19 @@
 # 主に使うパッケージ
 すべて
 
-# TODO 5-01-1
+# TODO 5-01
 [Applicationクラス](src/main/java/com/example/Application.java)は、Spring Bootの起点となるクラスです。
 `@SpringBootApplication`アノテーションをクラスに付加してください。
 
-# TODO 5-01-2
+# TODO 5-02
 [pom.xml](pom.xml)を確認してください。各種Starterライブラリによって、指定するライブラリが少なくなっていることを確認してください（変更不要）。
 
-# TODO 5-02
+# TODO 5-03
 [DataSourceConfigクラス](src/main/java/com/example/persistence/config/DataSourceConfig.java)は、組み込みDataSourceをBean定義しています。
 このBeanはAuto Configuration対象のため、Spring BootがBeanを作成します。
 よってこのJava Configクラスは不要のため、ファイルごと削除してください。
 
-# TODO 5-03
+# TODO 5-04
 組み込みDBの初期化で利用するSQLファイルの文字コードは、[application.properties](src/main/resources/application.properties)に指定します。
 下記のプロパティを追記してください。
 
@@ -30,13 +30,12 @@
 spring.datasource.sql-script-encoding=utf-8
 ```
 
-# TODO 5-04
-[JdbcConfigクラス](src/main/java/com/example/persistence/config/JdbcConfig.java)は、Spring Data JDBC関連のBeanを定義しています。
-コンポーネントスキャンは`@SpringBootApplication`によって行われるため、`@ComponentScan`を削除してください。
-
 # TODO 5-05
-`NamedParameterJdbcTemplate`のBeanはAuto Configuration対象のため、Spring BootがBeanを作成します。
-このBeanを定義しているメソッドを削除してください。
+[JdbcConfigクラス](src/main/java/com/example/persistence/config/JdbcConfig.java)は、Spring Data JDBC関連のBeanを定義しています。
+コンポーネントスキャンは`@SpringBootApplication`によって行われます。
+リポジトリインタフェースのスキャン、`NamedParameterJdbcTemplate`のBean定義などはSpring BootのAuto Configurationクラスによって行われます。
+よってこのJava Configクラスは不要のため、ファイルごと削除してください。
+`config`パッケージも不要なので削除してください。
 
 # TODO 5-06
 [ServiceConfigクラス](src/main/java/com/example/service/config/ServiceConfig.java)は、トランザクション関連の設定を記述しています。
@@ -104,5 +103,5 @@ logging.level.org.springframework.jdbc.core.JdbcTemplate=debug
 > （application.propertiesで任意のコンテキストルートを付ける設定を記述することもできます）
 
 # Well done!
-これですべての演習が完成しました。
-もし時間に余裕がある場合は、[todo-option.md](todo-option.md)に取り組んでください。
+これで演習5は完成です。
+次の演習は[todo-6.md](todo-6.md)に書かれています。

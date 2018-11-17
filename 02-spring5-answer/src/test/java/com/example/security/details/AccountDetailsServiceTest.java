@@ -34,7 +34,7 @@ public class AccountDetailsServiceTest {
         List<String> authorities = account.getAuthorities();
         assertEquals(1, authorities.size());
         assertAll(
-                () -> assertEquals(new Integer(1), account.getId()),
+                () -> assertEquals(Integer.valueOf(1), account.getId()),
                 () -> assertEquals("user", account.getName()),
                 () -> assertEquals("user@example.com", account.getEmail()),
                 () -> assertTrue(passwordEncoder.matches("user", account.getPassword())),

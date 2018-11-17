@@ -21,23 +21,20 @@ public class CustomerForm {
     @Length(min = 1, max = 32)
     private String lastName;
 
-    // TODO 3-03 検証アノテーションを確認する（変更不要）
     @NotBlank
     @Length(min = 1, max = 128)
     @Email
     private String email;
 
-    // TODO 3-04 検証アノテーションを確認する（変更不要）
     @NotNull
-    // TODO 3-05 アノテーションで日付フォーマットを「yyyy-MM-dd」に指定する
+    // TODO 3-03 アノテーションで日付フォーマットを「yyyy-MM-dd」に指定する
 
     private LocalDate birthday;
 
     public CustomerForm(String firstName,
                         String lastName,
                         String email,
-                        // TODO 3-06 コンストラクタの引数にも日付フォーマットが必要（変更不要）
-                        @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate birthday) {
+                        LocalDate birthday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

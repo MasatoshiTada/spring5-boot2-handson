@@ -38,6 +38,7 @@ public class Main {
                 additionWebInfClasses.getAbsolutePath(), "/"));
         ctx.setResources(resources);
 
+        tomcat.getConnector();
         tomcat.start();
         tomcat.getServer().await();
     }

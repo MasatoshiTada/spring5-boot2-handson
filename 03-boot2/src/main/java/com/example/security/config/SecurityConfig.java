@@ -24,7 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin()
                 .loginPage("/login")
                 .permitAll();
+        // TODO 6-03 Basic認証を有効化する
+
         http.authorizeRequests()
+                // TODO 6-04 Actuatorの認可設定を追加する
+
                 .mvcMatchers("/insert*").hasRole("ADMIN")
                 .anyRequest().authenticated();
         http.logout()

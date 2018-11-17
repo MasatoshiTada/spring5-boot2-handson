@@ -8,7 +8,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import java.nio.charset.StandardCharsets;
 
-// TODO 5-02 このクラスを削除する
+// TODO 5-03 このクラスを削除する
 @Configuration
 public class DataSourceConfig {
 
