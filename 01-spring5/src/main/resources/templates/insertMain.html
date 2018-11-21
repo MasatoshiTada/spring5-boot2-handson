@@ -44,7 +44,7 @@
         <tr>
             <th>誕生日</th>
             <td>
-                <input type="date" name="birthday" th:field="*{birthday}" placeholder="yyyy-MM-dd">
+                <input type="date" name="birthday" th:field="*{birthday}" placeholder="uuuu-MM-dd">
                 <div th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}" class="error"></div>
             </td>
         </tr>

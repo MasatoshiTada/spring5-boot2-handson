@@ -25,7 +25,7 @@ public class CustomerForm {
     private String email;
 
     @NotNull
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "uuuu-MM-dd")
     private LocalDate birthday;
 
     public CustomerForm(String firstName,

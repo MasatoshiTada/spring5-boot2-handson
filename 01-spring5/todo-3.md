@@ -29,7 +29,9 @@
 
 # TODO 3-03
 `birthday`フィールドは`java.time.LocalDate`型のため、日付のフォーマットを指定する必要があります。
-フィールドに`@DateTimeFormat(pattern = "yyyy-MM-dd")`を付加してください。
+フィールドに`@DateTimeFormat(pattern = "uuuu-MM-dd")`を付加してください。
+
+> 年の部分を "yyyy" ではなく "uuuu" にする理由は[Terasoluna開発ガイドライン](https://terasolunaorg.github.io/guideline/5.4.1.RELEASE/ja/ArchitectureInDetail/GeneralFuncDetail/DateAndTime.html#id10)を参照してください。
 
 # TODO 3-04
 [CustomerControllerクラス](src/main/java/com/example/web/controller/CustomerController.java)は、顧客に関するコントローラークラスです。
