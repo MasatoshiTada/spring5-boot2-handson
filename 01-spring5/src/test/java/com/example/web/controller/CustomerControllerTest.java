@@ -114,8 +114,8 @@ public class CustomerControllerTest {
     @DisplayName("顧客の追加ができてindex画面にリダイレクトする")
     @Transactional // テスト終了後にロールバックする
     public void insertCompleteTest2() {
-        CustomerForm customerForm = new CustomerForm("佑唯", "今泉",
-                "yimaizumi@keyaki.com", LocalDate.of(1998, 9, 30));
+        CustomerForm customerForm = new CustomerForm("絵梨花", "生田",
+                "eikuta@nogi.com", LocalDate.of(1997, 1, 22));
         BeanPropertyBindingResult bindingResult =
                 new BeanPropertyBindingResult(customerForm, "customerForm");
         String logicalViewName = customerController.insertComplete(customerForm, bindingResult);

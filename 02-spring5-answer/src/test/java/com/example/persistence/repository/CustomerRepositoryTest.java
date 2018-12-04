@@ -58,8 +58,8 @@ public class CustomerRepositoryTest {
     @DisplayName("save()で顧客が1件追加できる")
     @Transactional // テスト終了後にロールバック
     public void saveTest() {
-        Customer newCustomer = new Customer("佑唯", "今泉",
-                "yimaizumi@keyaki.com", LocalDate.of(1998, 9, 30));
+        Customer newCustomer = new Customer("絵梨花", "生田",
+                "eikuta@nogi.com", LocalDate.of(1997, 1, 22));
         customerRepository.save(newCustomer);
         int newCustomerId = 6;
         assertEquals(Integer.valueOf(newCustomerId), newCustomer.getId());
