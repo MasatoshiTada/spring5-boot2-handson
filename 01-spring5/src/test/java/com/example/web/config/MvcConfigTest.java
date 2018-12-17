@@ -130,7 +130,7 @@ public class MvcConfigTest {
         assertTrue(messageSource instanceof ResourceBundleMessageSource);
         ResourceBundleMessageSource resourceBundleMessageSource = (ResourceBundleMessageSource) messageSource;
         assertAll("messageSource not configured correctly",
-                () -> resourceBundleMessageSource.getBasenameSet().contains("messages"),
+                () -> assertTrue(resourceBundleMessageSource.getBasenameSet().contains("messages")),
                 () -> {
                     Field defaultEncodingField = AbstractResourceBasedMessageSource.class.getDeclaredField("defaultEncoding");
                     defaultEncodingField.setAccessible(true);
