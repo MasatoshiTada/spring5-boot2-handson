@@ -36,7 +36,7 @@ com.example.serviceパッケージ
 `findAll()`メソッドに`@Transactional(propagation = Propagation.REQUIRED, readOnly = true)`を付加してください。
 `readOnly = true`とすると、このメソッド内ではSELECT文しか発行できなくなります。
 
-> `PlatformTransactionManager` 実装によっては、 `readOnly = true` を無視するものがあります。その場合は、SELECT文も発行できてしまう可能性があります。
+> `PlatformTransactionManager` 実装によっては、 `readOnly = true` を無視するものがあります。その場合は、SELECT文以外も発行できてしまう可能性があります。
 
 # TODO 2-05
 `CustomerRepository`の`findAll()`を呼び出し、その戻り値をreturnしてください。

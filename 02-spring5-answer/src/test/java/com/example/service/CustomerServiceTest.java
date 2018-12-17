@@ -76,8 +76,8 @@ public class CustomerServiceTest {
                 () -> assertFalse(transactional.readOnly())
         );
 
-        Customer newCustomer = new Customer("佑唯", "今泉",
-                "yimaizumi@keyaki.com", LocalDate.of(1998, 9, 30));
+        Customer newCustomer = new Customer("絵梨花", "生田",
+                "eikuta@nogi.com", LocalDate.of(1997, 1, 22));
         customerService.save(newCustomer);
         assertEquals(Integer.valueOf(6), newCustomer.getId());
         assertEquals(6, JdbcTestUtils.countRowsInTable(jdbcTemplate, "customer"));
